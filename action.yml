@@ -33,3 +33,7 @@ jobs:
     - name: Copy files to the test website with the AWS CLI
       run: |
         aws s3 cp ${{ github.event.repository.name }}.zip s3://${{ secrets.AWS_BUCKET }}/${{ secrets.AWS_FOLDER }}/${{ github.event.repository.name }}.zip
+
+branding:
+  icon: "archive"
+  color: "gray-dark"
