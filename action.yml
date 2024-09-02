@@ -1,4 +1,5 @@
-name: Upload to S3
+name: "Zip and upload to S3"
+description: "Executing zipping and sending the ZIP to AWS S3 bucket"
 
 on:
   pull_request:
