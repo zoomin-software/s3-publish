@@ -11,6 +11,10 @@ Zips all the files
 - Markdown files
 - HTML files
 
+## 🤖 Works when
+A pull request is created
+Branches: `main`, `master`
+
 ## 💡 Before using the Action
 Ensure that those secrets are added:
 
