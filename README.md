@@ -12,8 +12,8 @@ Zips all the files
 - HTML files
 
 ## 🤖 Works when
-A pull request is created
-Branches: `main`, `master`
+A pull request is created.
+Branches: `main`, `master`.
 
 ## 💡 Before using the Action
 Ensure that those secrets are added:
