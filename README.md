@@ -1,4 +1,4 @@
-# About this GitHub action
+# 🚀 About this GitHub action
 
 ## Introduction
 The intention is to allow Salesforce clients to publish GitHub content to Salesforce Knowledge Base.
@@ -11,7 +11,7 @@ Zips all the files
 - Markdown files
 - HTML files
 
-## Before using the Action
+## 💡 Before using the Action
 Ensure that those secrets are added:
 
 1. On GitHub, navigate to the main page of the repository.
@@ -24,7 +24,7 @@ Ensure that those secrets are added:
     ![](https://github.com/user-attachments/assets/e4645704-4a9c-448e-9d75-3762e4211480)
 
 
-### The next secrets should be added:
+### 🔑 The next secrets should be added:
 - AWS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 - AWS_REGION
