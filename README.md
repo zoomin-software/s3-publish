@@ -25,8 +25,8 @@ Ensure that those secrets are added:
 
 
 ### 🔑 The next secrets should be added:
-- AWS_KEY_ID
-- AWS_SECRET_ACCESS_KEY
-- AWS_REGION
-- AWS_BUCKET
-- AWS_FOLDER
+- `AWS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION`
+- `AWS_BUCKET`
+- `AWS_FOLDER`
