@@ -1,8 +1,8 @@
 # 🚀 About this GitHub action
 
 ## Introduction
-The intention is to allow Salesforce clients to publish GitHub content to Salesforce Knowledge Base.
-The user receives credentials when creating a GitHub connector in Salesforce.
+The intention is to allow Salesforce clients to publish GitHub content to Salesforce Knowledge Base.  
+The user receives credentials when creating a GitHub connector in Salesforce.  
 
 ## Ingested content
 Zips all the files
@@ -12,8 +12,8 @@ Zips all the files
 - HTML files
 
 ## 🤖 Works when
-A pull request is created.
-Branches: `main`, `master`.
+A pull request is created.  
+Branches: `main`, `master`.  
 
 ## 💡 Before using the Action
 Ensure that those secrets are added:
