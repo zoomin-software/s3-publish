@@ -1,12 +1,17 @@
 name: "Github Uploader for Salesforce Unified Knowledge"
 description: "Executing zipping and sending the ZIP to AWS S3 bucket"
 
-on:
-  pull_request:
-    branches: [main, master]
-    types:
-      - closed
-  workflow_dispatch:
+inputs:
+  aws-key-id:
+    description: "AWS key id"
+  aws-secret-access-key:
+    description: "AWS secret access key"
+  aws-region:
+    description: "AWS region"
+  aws-bucket:
+    description: "AWS bucket"
+  aws-folder:
+    description: "AWS folder"    
 
 jobs:
   deploy:
@@ -23,16 +28,16 @@ jobs:
     - name: Zipping files
       run: zip -r ${{ github.event.repository.name }}.zip . -x '*.git*' '*.idea*'
 
-    - name: Configure AWS credentials from Test account
+    - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
+        aws-access-key-id: ${{ inputs.aws-key-id }}
+        aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
+        aws-region: ${{ inputs.aws-region }}
 
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 cp ${{ github.event.repository.name }}.zip s3://${{ secrets.AWS_BUCKET }}/${{ secrets.AWS_FOLDER }}/${{ github.event.repository.name }}.zip
+        aws s3 cp ${{ github.event.repository.name }}.zip s3://${{ inputs.aws-bucket }}/${{ inputs.aws-folder }}/${{ github.event.repository.name }}.zip
 
 branding:
   icon: "archive"
