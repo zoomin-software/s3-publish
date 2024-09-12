@@ -11,17 +11,11 @@ inputs:
   aws-bucket:
     description: "AWS bucket"
   aws-folder:
-    description: "AWS folder"    
+    description: "AWS folder"
 
-jobs:
-  deploy:
-    name: Upload to Amazon S3
-    runs-on: ubuntu-latest
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
-    permissions:
-      id-token: write
-      contents: read
-    steps:
+runs:
+  using: "composite"
+  steps:
     - name: Checkout
       uses: actions/checkout@v2
       
@@ -38,6 +32,7 @@ jobs:
     - name: Copy files to the test website with the AWS CLI
       run: |
         aws s3 cp ${{ github.event.repository.name }}.zip s3://${{ inputs.aws-bucket }}/${{ inputs.aws-folder }}/${{ github.event.repository.name }}.zip
+    
 
 branding:
   icon: "archive"
