@@ -1,4 +1,4 @@
-name: "Zip and upload to S3"
+name: "Github Uploader for Salesforce Unified Knowledge"
 description: "Executing zipping and sending the ZIP to AWS S3 bucket"
 
 on:
