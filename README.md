@@ -34,3 +34,27 @@ Ensure that those secrets are added:
 - `AWS_REGION`
 - `AWS_BUCKET`
 - `AWS_FOLDER`
+
+## Usage example
+```yaml
+name: Action Name
+on: [push]
+
+jobs:
+  deploy:
+    name: Upload to Amazon S3
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    steps:  
+      - name: Github Uploader for Salesforce Unified Knowledge
+        uses: zoomin-software/s3-publish@v0.2.0
+        with:
+          aws-key-id: ${{ secrets.AWS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-bucket: ${{ secrets.AWS_BUCKET }}
+          aws-folder: ${{ secrets.AWS_FOLDER }}
+```
