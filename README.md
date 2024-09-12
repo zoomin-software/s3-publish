@@ -35,7 +35,7 @@ Ensure that those secrets are added:
 - `AWS_BUCKET`
 - `AWS_FOLDER`
 
-## Usage example
+## 💻 Usage example
 ```yaml
 name: Action Name
 on: [push]
