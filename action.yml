@@ -21,6 +21,7 @@ runs:
       
     - name: Zipping files
       run: zip -r ${{ github.event.repository.name }}.zip . -x '*.git*' '*.idea*'
+      shell: bash
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -30,6 +31,7 @@ runs:
         aws-region: ${{ inputs.aws-region }}
 
     - name: Copy files to the test website with the AWS CLI
+      shell: bash
       run: |
         aws s3 cp ${{ github.event.repository.name }}.zip s3://${{ inputs.aws-bucket }}/${{ inputs.aws-folder }}/${{ github.event.repository.name }}.zip
     
